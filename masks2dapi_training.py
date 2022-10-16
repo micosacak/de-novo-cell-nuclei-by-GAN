@@ -242,6 +242,11 @@ def discriminator_loss(loss_object,disc_real_output, disc_generated_output):
 	return total_disc_loss
 
 ############### GENERATOR MODELS #######
+
+# mask2dapi_001: 1x U-Net (filter_sizes: 16, 32, 64; kernel_sizes: 3,5,7; activation functions: tanh)
+# mask2dapi_002: 2x U-Net (filter_sizes: 16; kernel_sizes: 3,5,7; activation functions: tanh, tanh or gelu, tanh)
+# mask2dapi_003: 3x U_Net (filter_sizes: 16; kernel_sizes: 3,5,7; activation functions: tanh, tanh, tanh or tanh, gelu, tanh)
+
 def mask2dapi_001(input_shape = (128,128,1), actFunc = "tanh", nChannels = 5, kernelSize = 3, filterSize = 16, strd = 2, drpL = 0.5, pdng = "same", useBs = False, unet = 6):
 	input1 = tf.keras.layers.Input(input_shape)
 	if unet == 6:
