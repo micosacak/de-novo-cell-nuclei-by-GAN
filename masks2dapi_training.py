@@ -11,6 +11,10 @@ import tensorflow as tf
 import scipy
 import datetime
 import inspect
+
+# please not that some codes are directly used or modified from Tensorflow website 
+# https://www.tensorflow.org/tutorials/generative/pix2pix (last accessed:1st October, 2022)
+
 LAMBDA = 1
 # some functions for image processing
 def getByC(the_C_image):
